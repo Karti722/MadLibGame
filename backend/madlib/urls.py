@@ -1,10 +1,8 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import MadLibViewSet
+# urls.py
 
-router = DefaultRouter()
-router.register(r'madlibs', MadLibViewSet)
+from django.urls import path
+from .views import create_madlib
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('api/madlib/', create_madlib, name='create_madlib'),
 ]
