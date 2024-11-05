@@ -1,7 +1,8 @@
+# serializers.py
 from rest_framework import serializers
-from .models import MadLib
 
-class MadLibSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = MadLib
-        fields = '__all__'
+class MadlibSerializer(serializers.Serializer):
+    noun = serializers.CharField(required=True)
+    verb = serializers.CharField(required=True)
+    adjective = serializers.CharField(required=True)
+    adverb = serializers.CharField(required=True)
